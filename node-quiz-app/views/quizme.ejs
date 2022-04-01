@@ -1,0 +1,39 @@
+<div id="quiz">
+    <a href="/dashboard" class="btn btn-secondary">Go to Dashboard</a>
+    <form action="/quizme/score" method="post">
+        <p><% let arr = resultg%></p>
+        <%
+            const arrayListOne = ["choice0", "choice1", "choice2", "choice3", "choice4"]
+            const arrayListTwo = ["answer0", "answer1", "answer2", "answer3", "answer4"]
+            const arrayListID = ["a", "b", "c", "d"]
+        %>
+
+        <%for (let GH = 0; GH < arr.length; GH++) {%>            
+            <div  class="quiz-container" >    
+                <div class="quiz-header">
+                    <h3 style="text-align: center;" class="mt-3"><%= arr[GH].id %></h3>
+                    <ul>
+                        <h2 id="question"><%= arr[GH].question %></h2>
+                        <label for="<%= arrayListOne[GH]%>">
+                            <li><label id="one"><input type="radio" name="<%= arrayListOne[GH] %>" id="a" class="<%= arrayListTwo[GH] %>"   value="<%= arr[GH].a %>" /><%= arr[GH].a %></label></li>
+                            <li><label id="two"><input type="radio" name="<%= arrayListOne[GH] %>"  id="b" class="<%= arrayListTwo[GH] %>" value="<%= arr[GH].b %>" /><%= arr[GH].b %></label></li>
+                            <li><label id="three"><input type="radio" name="<%= arrayListOne[GH] %>"  id="c" class="<%= arrayListTwo[GH] %>" value="<%= arr[GH].c %>" /><%= arr[GH].c %></label></li>
+                            <li><label id="four"><input type="radio" name="<%= arrayListOne[GH] %>"  id="d" class="<%= arrayListTwo[GH] %>" value="<%= arr[GH].d %>" /><%= arr[GH].d %></label></li>    
+                        </label>
+                    </ul>
+                </div>
+            </div>  <p></p>
+        <% } %>            
+        <button type="submit" id="submit">Submit</button>        
+    </form>
+</div>   
+<script>
+    const   zero      = '<%=arr[0].correct%>',
+            first     = '<%=arr[1].correct%>',
+            second    = '<%=arr[2].correct%>',
+            third     = '<%=arr[3].correct%>',
+            fourth    = '<%=arr[4].correct%>'
+</script>
+
+
+    
