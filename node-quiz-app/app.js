@@ -28,7 +28,7 @@ app.use(express.urlencoded({ extended: false }))
 
 // Express Session
 app.use(session({
-    secret: 'fnflk39832099(U*&@&@*998',
+    secret: 'your-secret-key',
     resave: true,
     saveUninitialized: true
 }))
